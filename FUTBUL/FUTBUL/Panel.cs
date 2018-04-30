@@ -151,5 +151,11 @@ namespace FUTBUL
             BasvuruOnay bo = new BasvuruOnay();
             bo.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SahaEkle sh = new SahaEkle();
+            sh.Show();
+        }
     }
 }

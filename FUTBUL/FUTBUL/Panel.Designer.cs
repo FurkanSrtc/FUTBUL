@@ -43,13 +43,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).BeginInit();
@@ -172,6 +172,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formlar";
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(288, 70);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(88, 48);
+            this.button8.TabIndex = 13;
+            this.button8.Text = "Başvuru Onay";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(6, 70);
@@ -180,6 +190,7 @@
             this.button7.TabIndex = 12;
             this.button7.Text = "Halı Saha Ekle";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -234,16 +245,6 @@
             this.button4.Text = "Hesaplar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(288, 70);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(88, 48);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Başvuru Onay";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Panel
             // 

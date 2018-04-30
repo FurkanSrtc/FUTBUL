@@ -36,6 +36,8 @@ namespace FUTBUL
 
         private void TakimaKatil_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'futbolDataSet.Uyeler' table. You can move, or remove it, as needed.
+            this.uyelerTableAdapter.Fill(this.futbolDataSet.Uyeler);
             // TODO: This line of code loads data into the 'futbolDataSet.Oyuncular' table. You can move, or remove it, as needed.
             this.oyuncularTableAdapter.Fill(this.futbolDataSet.Oyuncular);
             button1.Enabled = false;
@@ -62,7 +64,7 @@ namespace FUTBUL
             /*  SqlDataAdapter adapter = new SqlDataAdapter("Update Oyuncular set TakimNo = '"+takimkodu+"', FormaNo='"+maskedTextBox1.Text+"'FROM Oyuncular  inner join  Uyeler on Oyuncular.Id = Uyeler.OyuncuId   where Uyeler.OyuncuId = Oyuncular.Id   and Uyeler.KullaniciAdi = '"+ textBox1.Text + "'", conn);  --Takıma Katılır
 
                */
-            SqlDataAdapter adapter = new SqlDataAdapter(" insert into TakimaBasvuru (KullaniciAdi,TakimNo,FormaNo) values ('" + textBox1.Text+"','"+ takimkodu + "','"+ Convert.ToInt16(maskedTextBox1.Text) + "')",conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(" insert into TakimaBasvuru (KullaniciAdi,TakimNo,FormaNo) values ('" + comboBox1.SelectedValue.ToString() + "','"+ takimkodu + "','"+ Convert.ToInt16(maskedTextBox1.Text) + "')",conn);
             adapter.Fill(tbl);
 
             conn.Close();

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace FUTBUL
 {
-    public partial class Form1 : Form
+    public partial class SahaEkle : Form
     {
-        public Form1()
+        public SahaEkle()
         {
             InitializeComponent();
+        }
+
+        private void SahaEkle_Load(object sender, EventArgs e)
+        {
+      
+
         }
     }
 }

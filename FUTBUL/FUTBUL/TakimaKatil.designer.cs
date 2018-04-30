@@ -41,12 +41,15 @@
             this.oyuncularBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oyuncularTableAdapter = new FUTBUL.FutbolDataSetTableAdapters.OyuncularTableAdapter();
             this.uyelerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.uyelerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.uyelerTableAdapter = new FUTBUL.FutbolDataSetTableAdapters.UyelerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oyuncularBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,19 +142,32 @@
             this.uyelerBindingSource1.DataMember = "Uyeler";
             this.uyelerBindingSource1.DataSource = this.futbolDataSet;
             // 
-            // textBox1
+            // comboBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
+            this.comboBox1.DataSource = this.uyelerBindingSource2;
+            this.comboBox1.DisplayMember = "KullaniciAdi";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(111, 61);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.ValueMember = "KullaniciAdi";
+            // 
+            // uyelerBindingSource2
+            // 
+            this.uyelerBindingSource2.DataMember = "Uyeler";
+            this.uyelerBindingSource2.DataSource = this.futbolDataSet;
+            // 
+            // uyelerTableAdapter
+            // 
+            this.uyelerTableAdapter.ClearBeforeFill = true;
             // 
             // TakimaKatil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 352);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -162,11 +178,12 @@
             this.Name = "TakimaKatil";
             this.Text = "TakimaKatil";
             this.Load += new System.EventHandler(this.TakimaKatil_Load);
-         /*   ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oyuncularBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource1)).EndInit();*/
+            ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uyelerBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +202,8 @@
         private FutbolDataSetTableAdapters.OyuncularTableAdapter oyuncularTableAdapter;
         private System.Windows.Forms.BindingSource uyelerBindingSource;
         private System.Windows.Forms.BindingSource uyelerBindingSource1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource uyelerBindingSource2;
+        private FutbolDataSetTableAdapters.UyelerTableAdapter uyelerTableAdapter;
     }
 }
