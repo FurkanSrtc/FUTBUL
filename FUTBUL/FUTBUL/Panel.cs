@@ -15,7 +15,7 @@ namespace FUTBUL
     {
         SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Futbol; Integrated Security = True");
 
-
+        
 
         public Panel()
         {
@@ -23,15 +23,20 @@ namespace FUTBUL
            
            
         }
+
+        public void yenile(string kullaniciAdi)
+        {
+            lblKullaniciAdi.Text = kullaniciAdi; 
+        }
+
         DataTable tbl = new DataTable();
         SqlDataAdapter adapter;
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'futbolDataSet.SahaDurumu' table. You can move, or remove it, as needed.
-            this.sahaDurumuTableAdapter.Fill(this.futbolDataSet.SahaDurumu);
-            // TODO: This line of code loads data into the 'futbolDataSet.Takimlar' table. You can move, or remove it, as needed.
-            this.takimlarTableAdapter.Fill(this.futbolDataSet.Takimlar);
-
+            // TODO: This line of code loads data into the 'futbolDataSet1.Takimlar' table. You can move, or remove it, as needed.
+            this.takimlarTableAdapter1.Fill(this.futbolDataSet1.Takimlar);
+            // TODO: This line of code loads data into the 'futbolDataSet1.SahaDurumu' table. You can move, or remove it, as needed.
+            this.sahaDurumuTableAdapter1.Fill(this.futbolDataSet1.SahaDurumu);
         }
 
         private void temizle()
@@ -43,7 +48,7 @@ namespace FUTBUL
         {
             conn.Open();
             tbl = new DataTable();
-             adapter = new SqlDataAdapter("Select Personel.Adi 'Personel Adı',Personel.Soyadi, Saha.SahaAdi, Saha.Adres, SahaTuru.SahaTuru from Saha Inner Join SahaTuru ON Saha.SahaTuru=SahaTuru.SahaId Inner Join Personel On Saha.SahaNo = Personel.SahaNo", conn);
+             adapter = new SqlDataAdapter("exec gosterSaha", conn);
             adapter.Fill(tbl);
          
             conn.Close();
@@ -121,7 +126,7 @@ namespace FUTBUL
         {
             conn.Open();
             tbl = new DataTable();
-            adapter = new SqlDataAdapter("exec pUyeler", conn);
+            adapter = new SqlDataAdapter("exec gosterUyeler", conn);
             adapter.Fill(tbl);
             conn.Close();
             dataGridView1.DataSource = tbl;
@@ -136,8 +141,14 @@ namespace FUTBUL
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TakimOlustur takim = new TakimOlustur();
+            if (lblKullaniciAdi.Text=="none")
+            {
+                MessageBox.Show("Lütfen Üye Girişi Yapın", "Hata");
+            }
+            else { 
+            TakimOlustur takim = new TakimOlustur(lblKullaniciAdi.Text);
             takim.Show();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

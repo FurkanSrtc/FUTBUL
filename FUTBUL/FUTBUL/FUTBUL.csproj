@@ -56,16 +56,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FutbolDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FutbolDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FutbolDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FutbolDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FutbolDataSet2.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Kullanici.cs" />
     <Compile Include="Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,28 +135,6 @@
     </None>
     <None Include="FutbolDataSet.xss">
       <DependentUpon>FutbolDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FutbolDataSet1.xsc">
-      <DependentUpon>FutbolDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FutbolDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FutbolDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FutbolDataSet1.xss">
-      <DependentUpon>FutbolDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FutbolDataSet2.xsc">
-      <DependentUpon>FutbolDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="FutbolDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FutbolDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FutbolDataSet2.xss">
-      <DependentUpon>FutbolDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

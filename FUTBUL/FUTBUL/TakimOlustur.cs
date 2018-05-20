@@ -15,8 +15,10 @@ namespace FUTBUL
     {
         SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Futbol; Integrated Security = True");
 
-        public TakimOlustur()
+        string kullaniciAdi;
+        public TakimOlustur(string kAdi)
         {
+            kullaniciAdi = kAdi;
             InitializeComponent();
         }
 
@@ -27,13 +29,19 @@ namespace FUTBUL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            DataTable tbl = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(" Insert into Takimlar Values ('"+textBox1.Text+"','"+textBox2.Text+"')", conn);
-            adapter.Fill(tbl);
-            conn.Close();
 
-            MessageBox.Show(textBox1.Text + " Takımı Başarıyla Oluşturuldu.");
+       
+                Kullanici kullanici = new Kullanici();
+                conn.Open();
+                DataTable tbl = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(" Insert into Takimlar Values ('" + textBox1.Text + "','" + textBox2.Text + "','" + kullaniciAdi + "')", conn);
+                adapter.Fill(tbl);
+                conn.Close();
+
+                MessageBox.Show(kullaniciAdi + " kullanıcısına '" + textBox1.Text + "' takımı başarıyla oluşturuldu.");
+          
+          
+            
         }
     }
 }

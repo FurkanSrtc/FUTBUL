@@ -31,11 +31,20 @@ namespace FUTBUL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            if (dt.Rows.Count ==0) MessageBox.Show("Kullanıcı Adı veya Parolanız hatalı");
+            if (dt.Rows.Count == 0)
+                MessageBox.Show("Kullanıcı Adı veya Parolanız hatalı");
 
-           else MessageBox.Show("Giriş Başarılı");
 
+           else 
+            {
+           MessageBox.Show("Giriş Başarılı");
+           Kullanici kullanici = new Kullanici();
+           Panel panel = (Panel)Application.OpenForms["Panel"];
+            panel.yenile(textBox1.Text);
+            kullanici.KullaniciAdi = textBox1.Text;
+            }
             conn.Close();
+            this.Close();
             
         }
 

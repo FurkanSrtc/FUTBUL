@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtmaskTel = new System.Windows.Forms.MaskedTextBox();
@@ -39,6 +40,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbYetkiTuru = new System.Windows.Forms.ComboBox();
+            this.futbolDataSet = new FUTBUL.FutbolDataSet();
+            this.futbolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yetkilerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yetkilerTableAdapter = new FUTBUL.FutbolDataSetTableAdapters.YetkilerTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yetkilerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAd
@@ -94,7 +103,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 233);
+            this.button1.Location = new System.Drawing.Point(119, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 6;
@@ -134,11 +143,43 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Şifre";
             // 
+            // cmbYetkiTuru
+            // 
+            this.cmbYetkiTuru.DataSource = this.yetkilerBindingSource;
+            this.cmbYetkiTuru.DisplayMember = "YetkiTuru";
+            this.cmbYetkiTuru.FormattingEnabled = true;
+            this.cmbYetkiTuru.Location = new System.Drawing.Point(119, 208);
+            this.cmbYetkiTuru.Name = "cmbYetkiTuru";
+            this.cmbYetkiTuru.Size = new System.Drawing.Size(100, 21);
+            this.cmbYetkiTuru.TabIndex = 11;
+            this.cmbYetkiTuru.ValueMember = "YetkiKodu";
+            this.cmbYetkiTuru.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // futbolDataSet
+            // 
+            this.futbolDataSet.DataSetName = "FutbolDataSet";
+            this.futbolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // futbolDataSetBindingSource
+            // 
+            this.futbolDataSetBindingSource.DataSource = this.futbolDataSet;
+            this.futbolDataSetBindingSource.Position = 0;
+            // 
+            // yetkilerBindingSource
+            // 
+            this.yetkilerBindingSource.DataMember = "Yetkiler";
+            this.yetkilerBindingSource.DataSource = this.futbolDataSetBindingSource;
+            // 
+            // yetkilerTableAdapter
+            // 
+            this.yetkilerTableAdapter.ClearBeforeFill = true;
+            // 
             // UyeOl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 279);
+            this.ClientSize = new System.Drawing.Size(270, 346);
+            this.Controls.Add(this.cmbYetkiTuru);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
@@ -153,6 +194,9 @@
             this.Name = "UyeOl";
             this.Text = "UyeOl";
             this.Load += new System.EventHandler(this.UyeOl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yetkilerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +215,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbYetkiTuru;
+        private System.Windows.Forms.BindingSource futbolDataSetBindingSource;
+        private FutbolDataSet futbolDataSet;
+        private System.Windows.Forms.BindingSource yetkilerBindingSource;
+        private FutbolDataSetTableAdapters.YetkilerTableAdapter yetkilerTableAdapter;
     }
 }

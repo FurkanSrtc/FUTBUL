@@ -29,7 +29,7 @@ namespace FUTBUL
             {
                 conn.Open();
                 tbl = new DataTable();
-                adapter = new SqlDataAdapter("exec pOyuncuEkle '" + txtAd.Text + "','" + txtSoyad.Text + "','" + txtmaskTel.Text + "','"+textBox1.Text+"','"+textBox2.Text+"'", conn);
+                adapter = new SqlDataAdapter("exec pOyuncuEkle '" + txtAd.Text + "','" + txtSoyad.Text + "','" + txtmaskTel.Text + "','"+textBox1.Text+"','"+textBox2.Text+"','"+cmbYetkiTuru.SelectedValue.ToString()+"'", conn);
                 adapter.Fill(tbl);
                 conn.Close();
              DialogResult a= MessageBox.Show("Kayıt Ekleme Başarılı\n Ana Menüye Döncek Misin ?", "Başarılı",MessageBoxButtons.YesNo);
@@ -39,6 +39,7 @@ namespace FUTBUL
                       p.Show();*/
                     this.Close();
                 }
+
             }
             catch (Exception)
             {
@@ -52,7 +53,16 @@ namespace FUTBUL
 
         private void UyeOl_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'futbolDataSet.Yetkiler' table. You can move, or remove it, as needed.
+            this.yetkilerTableAdapter.Fill(this.futbolDataSet.Yetkiler);
+            // TODO: This line of code loads data into the 'futbolDataSet.Oyuncular' table. You can move, or remove it, as needed.
 
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }
