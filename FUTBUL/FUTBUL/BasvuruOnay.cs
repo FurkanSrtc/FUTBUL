@@ -67,14 +67,10 @@ namespace FUTBUL
         {
             conn.Open();
             DataTable tbl = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(" Update Oyuncular set TakimNo = '"+ dataGridView1.CurrentRow.Cells[2].Value.ToString() + "', FormaNo = '"+ dataGridView1.CurrentRow.Cells[1].Value.ToString() + "' FROM Oyuncular inner join Uyeler on Oyuncular.Id = Uyeler.OyuncuId inner join TakimaBasvuru on TakimaBasvuru.KullaniciAdi = Uyeler.KullaniciAdi where Uyeler.OyuncuId = Oyuncular.Id and Uyeler.KullaniciAdi = '"+textBox2.Text+"'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter("exec BasvuruOnay '"+ dataGridView1.CurrentRow.Cells[2].Value.ToString() + "', '"+ dataGridView1.CurrentRow.Cells[1].Value.ToString() + "','" + textBox2.Text + "'", conn);
             adapter.Fill(tbl);
 
-            DataTable tbl2 = new DataTable();
-            SqlDataAdapter adapter2 = new SqlDataAdapter(" delete from TakimaBasvuru where KullaniciAdi='"+textBox2.Text+"'", conn);
-            adapter2.Fill(tbl2);
-
-            MessageBox.Show(textBox2.Text + "Başarıyla Transfer Edildi.");
+            MessageBox.Show(textBox2.Text+" Başarıyla Transfer Edildi.");
 
             conn.Close();
             yenile();

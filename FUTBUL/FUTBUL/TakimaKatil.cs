@@ -38,8 +38,7 @@ namespace FUTBUL
         {
             // TODO: This line of code loads data into the 'futbolDataSet.Uyeler' table. You can move, or remove it, as needed.
             this.uyelerTableAdapter.Fill(this.futbolDataSet.Uyeler);
-            // TODO: This line of code loads data into the 'futbolDataSet.Oyuncular' table. You can move, or remove it, as needed.
-            this.oyuncularTableAdapter.Fill(this.futbolDataSet.Oyuncular);
+       
             button1.Enabled = false;
             conn.Open();
             DataTable tbl = new DataTable();

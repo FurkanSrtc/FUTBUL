@@ -29,7 +29,7 @@ namespace FUTBUL
             {
                 conn.Open();
                 tbl = new DataTable();
-                adapter = new SqlDataAdapter("exec pOyuncuEkle '" + txtAd.Text + "','" + txtSoyad.Text + "','" + txtmaskTel.Text + "','"+textBox1.Text+"','"+textBox2.Text+"','"+cmbYetkiTuru.SelectedValue.ToString()+"'", conn);
+                adapter = new SqlDataAdapter("exec pOyuncuEkle '" + txtAd.Text + "','" + txtSoyad.Text + "','" + txtmaskTel.Text + "','"+textBox1.Text+"','"+textBox2.Text+"','"+cmbYetkiTuru.SelectedValue.ToString()+"','"+txtMail.Text+"'", conn);
                 adapter.Fill(tbl);
                 conn.Close();
              DialogResult a= MessageBox.Show("Kayıt Ekleme Başarılı\n Ana Menüye Döncek Misin ?", "Başarılı",MessageBoxButtons.YesNo);

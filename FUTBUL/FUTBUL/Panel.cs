@@ -56,25 +56,6 @@ namespace FUTBUL
             dataGridView1.DataSource = tbl;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            tbl = new DataTable();
-            adapter = new SqlDataAdapter("Select s.SahaAdi, st.SahaTuru,s.il,s.ilce, sd.SahaDurum from Saha s inner join SahaTuru st on s.SahaTuru=st.SahaId inner join SahaDurumu sd on s.SahaDurumu=sd.DurumKodu", conn);
-            adapter.Fill(tbl);
-            conn.Close();
-            dataGridView1.DataSource = tbl;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            tbl = new DataTable();
-            adapter = new SqlDataAdapter("select o.Ad , o.Soyad, o.FormaNo, t.TakimAdi  from Oyuncular o LEFT JOIN Takimlar t ON o.TakimNo=t.TakimNo", conn);
-            adapter.Fill(tbl);
-            conn.Close();
-            dataGridView1.DataSource = tbl;
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
