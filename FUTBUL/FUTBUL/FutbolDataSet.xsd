@@ -478,7 +478,16 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
               <Mapping SourceColumn="OyuncuId" DataSetColumn="OyuncuId" />
               <Mapping SourceColumn="YetkiKodu" DataSetColumn="YetkiKodu" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="FutbolConnectionString (Settings)" DbObjectName="Futbol.dbo.Uyeler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM dbo.Uyeler where YetkiKodu='2'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="YetkilerTableAdapter" GeneratorDataComponentClassName="YetkilerTableAdapter" Name="Yetkiler" UserDataComponentName="YetkilerTableAdapter">
             <MainSource>
@@ -624,7 +633,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
   <xs:element name="FutbolDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FutbolDataSet" msprop:Generator_UserDSName="FutbolDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Oyuncular" msprop:Generator_TableClassName="OyuncularDataTable" msprop:Generator_TableVarName="tableOyuncular" msprop:Generator_TablePropName="Oyuncular" msprop:Generator_RowDeletingName="OyuncularRowDeleting" msprop:Generator_RowChangingName="OyuncularRowChanging" msprop:Generator_RowEvHandlerName="OyuncularRowChangeEventHandler" msprop:Generator_RowDeletedName="OyuncularRowDeleted" msprop:Generator_UserTableName="Oyuncular" msprop:Generator_RowChangedName="OyuncularRowChanged" msprop:Generator_RowEvArgName="OyuncularRowChangeEvent" msprop:Generator_RowClassName="OyuncularRow">
+        <xs:element name="Oyuncular" msprop:Generator_TableClassName="OyuncularDataTable" msprop:Generator_TableVarName="tableOyuncular" msprop:Generator_RowChangedName="OyuncularRowChanged" msprop:Generator_TablePropName="Oyuncular" msprop:Generator_RowDeletingName="OyuncularRowDeleting" msprop:Generator_RowChangingName="OyuncularRowChanging" msprop:Generator_RowEvHandlerName="OyuncularRowChangeEventHandler" msprop:Generator_RowDeletedName="OyuncularRowDeleted" msprop:Generator_RowClassName="OyuncularRow" msprop:Generator_UserTableName="Oyuncular" msprop:Generator_RowEvArgName="OyuncularRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -667,7 +676,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Personel" msprop:Generator_TableClassName="PersonelDataTable" msprop:Generator_TableVarName="tablePersonel" msprop:Generator_TablePropName="Personel" msprop:Generator_RowDeletingName="PersonelRowDeleting" msprop:Generator_RowChangingName="PersonelRowChanging" msprop:Generator_RowEvHandlerName="PersonelRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonelRowDeleted" msprop:Generator_UserTableName="Personel" msprop:Generator_RowChangedName="PersonelRowChanged" msprop:Generator_RowEvArgName="PersonelRowChangeEvent" msprop:Generator_RowClassName="PersonelRow">
+        <xs:element name="Personel" msprop:Generator_TableClassName="PersonelDataTable" msprop:Generator_TableVarName="tablePersonel" msprop:Generator_RowChangedName="PersonelRowChanged" msprop:Generator_TablePropName="Personel" msprop:Generator_RowDeletingName="PersonelRowDeleting" msprop:Generator_RowChangingName="PersonelRowChanging" msprop:Generator_RowEvHandlerName="PersonelRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonelRowDeleted" msprop:Generator_RowClassName="PersonelRow" msprop:Generator_UserTableName="Personel" msprop:Generator_RowEvArgName="PersonelRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonelNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPersonelNo" msprop:Generator_ColumnPropNameInRow="PersonelNo" msprop:Generator_ColumnPropNameInTable="PersonelNoColumn" msprop:Generator_UserColumnName="PersonelNo" type="xs:int" />
@@ -696,7 +705,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Saha" msprop:Generator_TableClassName="SahaDataTable" msprop:Generator_TableVarName="tableSaha" msprop:Generator_TablePropName="Saha" msprop:Generator_RowDeletingName="SahaRowDeleting" msprop:Generator_RowChangingName="SahaRowChanging" msprop:Generator_RowEvHandlerName="SahaRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaRowDeleted" msprop:Generator_UserTableName="Saha" msprop:Generator_RowChangedName="SahaRowChanged" msprop:Generator_RowEvArgName="SahaRowChangeEvent" msprop:Generator_RowClassName="SahaRow">
+        <xs:element name="Saha" msprop:Generator_TableClassName="SahaDataTable" msprop:Generator_TableVarName="tableSaha" msprop:Generator_RowChangedName="SahaRowChanged" msprop:Generator_TablePropName="Saha" msprop:Generator_RowDeletingName="SahaRowDeleting" msprop:Generator_RowChangingName="SahaRowChanging" msprop:Generator_RowEvHandlerName="SahaRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaRowDeleted" msprop:Generator_RowClassName="SahaRow" msprop:Generator_UserTableName="Saha" msprop:Generator_RowEvArgName="SahaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SahaNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSahaNo" msprop:Generator_ColumnPropNameInRow="SahaNo" msprop:Generator_ColumnPropNameInTable="SahaNoColumn" msprop:Generator_UserColumnName="SahaNo" type="xs:int" />
@@ -739,7 +748,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SahaDurumu" msprop:Generator_TableClassName="SahaDurumuDataTable" msprop:Generator_TableVarName="tableSahaDurumu" msprop:Generator_TablePropName="SahaDurumu" msprop:Generator_RowDeletingName="SahaDurumuRowDeleting" msprop:Generator_RowChangingName="SahaDurumuRowChanging" msprop:Generator_RowEvHandlerName="SahaDurumuRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaDurumuRowDeleted" msprop:Generator_UserTableName="SahaDurumu" msprop:Generator_RowChangedName="SahaDurumuRowChanged" msprop:Generator_RowEvArgName="SahaDurumuRowChangeEvent" msprop:Generator_RowClassName="SahaDurumuRow">
+        <xs:element name="SahaDurumu" msprop:Generator_TableClassName="SahaDurumuDataTable" msprop:Generator_TableVarName="tableSahaDurumu" msprop:Generator_RowChangedName="SahaDurumuRowChanged" msprop:Generator_TablePropName="SahaDurumu" msprop:Generator_RowDeletingName="SahaDurumuRowDeleting" msprop:Generator_RowChangingName="SahaDurumuRowChanging" msprop:Generator_RowEvHandlerName="SahaDurumuRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaDurumuRowDeleted" msprop:Generator_RowClassName="SahaDurumuRow" msprop:Generator_UserTableName="SahaDurumu" msprop:Generator_RowEvArgName="SahaDurumuRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DurumKodu" msprop:Generator_ColumnVarNameInTable="columnDurumKodu" msprop:Generator_ColumnPropNameInRow="DurumKodu" msprop:Generator_ColumnPropNameInTable="DurumKoduColumn" msprop:Generator_UserColumnName="DurumKodu">
@@ -759,7 +768,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SahaTuru" msprop:Generator_TableClassName="SahaTuruDataTable" msprop:Generator_TableVarName="tableSahaTuru" msprop:Generator_TablePropName="SahaTuru" msprop:Generator_RowDeletingName="SahaTuruRowDeleting" msprop:Generator_RowChangingName="SahaTuruRowChanging" msprop:Generator_RowEvHandlerName="SahaTuruRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaTuruRowDeleted" msprop:Generator_UserTableName="SahaTuru" msprop:Generator_RowChangedName="SahaTuruRowChanged" msprop:Generator_RowEvArgName="SahaTuruRowChangeEvent" msprop:Generator_RowClassName="SahaTuruRow">
+        <xs:element name="SahaTuru" msprop:Generator_TableClassName="SahaTuruDataTable" msprop:Generator_TableVarName="tableSahaTuru" msprop:Generator_RowChangedName="SahaTuruRowChanged" msprop:Generator_TablePropName="SahaTuru" msprop:Generator_RowDeletingName="SahaTuruRowDeleting" msprop:Generator_RowChangingName="SahaTuruRowChanging" msprop:Generator_RowEvHandlerName="SahaTuruRowChangeEventHandler" msprop:Generator_RowDeletedName="SahaTuruRowDeleted" msprop:Generator_RowClassName="SahaTuruRow" msprop:Generator_UserTableName="SahaTuru" msprop:Generator_RowEvArgName="SahaTuruRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SahaId" msprop:Generator_ColumnVarNameInTable="columnSahaId" msprop:Generator_ColumnPropNameInRow="SahaId" msprop:Generator_ColumnPropNameInTable="SahaIdColumn" msprop:Generator_UserColumnName="SahaId" type="xs:short" />
@@ -773,7 +782,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TakimaBasvuru" msprop:Generator_TableClassName="TakimaBasvuruDataTable" msprop:Generator_TableVarName="tableTakimaBasvuru" msprop:Generator_TablePropName="TakimaBasvuru" msprop:Generator_RowDeletingName="TakimaBasvuruRowDeleting" msprop:Generator_RowChangingName="TakimaBasvuruRowChanging" msprop:Generator_RowEvHandlerName="TakimaBasvuruRowChangeEventHandler" msprop:Generator_RowDeletedName="TakimaBasvuruRowDeleted" msprop:Generator_UserTableName="TakimaBasvuru" msprop:Generator_RowChangedName="TakimaBasvuruRowChanged" msprop:Generator_RowEvArgName="TakimaBasvuruRowChangeEvent" msprop:Generator_RowClassName="TakimaBasvuruRow">
+        <xs:element name="TakimaBasvuru" msprop:Generator_TableClassName="TakimaBasvuruDataTable" msprop:Generator_TableVarName="tableTakimaBasvuru" msprop:Generator_RowChangedName="TakimaBasvuruRowChanged" msprop:Generator_TablePropName="TakimaBasvuru" msprop:Generator_RowDeletingName="TakimaBasvuruRowDeleting" msprop:Generator_RowChangingName="TakimaBasvuruRowChanging" msprop:Generator_RowEvHandlerName="TakimaBasvuruRowChangeEventHandler" msprop:Generator_RowDeletedName="TakimaBasvuruRowDeleted" msprop:Generator_RowClassName="TakimaBasvuruRow" msprop:Generator_UserTableName="TakimaBasvuru" msprop:Generator_RowEvArgName="TakimaBasvuruRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -796,7 +805,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Takimlar" msprop:Generator_TableClassName="TakimlarDataTable" msprop:Generator_TableVarName="tableTakimlar" msprop:Generator_TablePropName="Takimlar" msprop:Generator_RowDeletingName="TakimlarRowDeleting" msprop:Generator_RowChangingName="TakimlarRowChanging" msprop:Generator_RowEvHandlerName="TakimlarRowChangeEventHandler" msprop:Generator_RowDeletedName="TakimlarRowDeleted" msprop:Generator_UserTableName="Takimlar" msprop:Generator_RowChangedName="TakimlarRowChanged" msprop:Generator_RowEvArgName="TakimlarRowChangeEvent" msprop:Generator_RowClassName="TakimlarRow">
+        <xs:element name="Takimlar" msprop:Generator_TableClassName="TakimlarDataTable" msprop:Generator_TableVarName="tableTakimlar" msprop:Generator_RowChangedName="TakimlarRowChanged" msprop:Generator_TablePropName="Takimlar" msprop:Generator_RowDeletingName="TakimlarRowDeleting" msprop:Generator_RowChangingName="TakimlarRowChanging" msprop:Generator_RowEvHandlerName="TakimlarRowChangeEventHandler" msprop:Generator_RowDeletedName="TakimlarRowDeleted" msprop:Generator_RowClassName="TakimlarRow" msprop:Generator_UserTableName="Takimlar" msprop:Generator_RowEvArgName="TakimlarRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TakimAdi" msprop:Generator_ColumnVarNameInTable="columnTakimAdi" msprop:Generator_ColumnPropNameInRow="TakimAdi" msprop:Generator_ColumnPropNameInTable="TakimAdiColumn" msprop:Generator_UserColumnName="TakimAdi">
@@ -823,7 +832,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Uyeler" msprop:Generator_TableClassName="UyelerDataTable" msprop:Generator_TableVarName="tableUyeler" msprop:Generator_TablePropName="Uyeler" msprop:Generator_RowDeletingName="UyelerRowDeleting" msprop:Generator_RowChangingName="UyelerRowChanging" msprop:Generator_RowEvHandlerName="UyelerRowChangeEventHandler" msprop:Generator_RowDeletedName="UyelerRowDeleted" msprop:Generator_UserTableName="Uyeler" msprop:Generator_RowChangedName="UyelerRowChanged" msprop:Generator_RowEvArgName="UyelerRowChangeEvent" msprop:Generator_RowClassName="UyelerRow">
+        <xs:element name="Uyeler" msprop:Generator_TableClassName="UyelerDataTable" msprop:Generator_TableVarName="tableUyeler" msprop:Generator_RowChangedName="UyelerRowChanged" msprop:Generator_TablePropName="Uyeler" msprop:Generator_RowDeletingName="UyelerRowDeleting" msprop:Generator_RowChangingName="UyelerRowChanging" msprop:Generator_RowEvHandlerName="UyelerRowChangeEventHandler" msprop:Generator_RowDeletedName="UyelerRowDeleted" msprop:Generator_RowClassName="UyelerRow" msprop:Generator_UserTableName="Uyeler" msprop:Generator_RowEvArgName="UyelerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="KullaniciAdi" msprop:Generator_ColumnVarNameInTable="columnKullaniciAdi" msprop:Generator_ColumnPropNameInRow="KullaniciAdi" msprop:Generator_ColumnPropNameInTable="KullaniciAdiColumn" msprop:Generator_UserColumnName="KullaniciAdi">
@@ -845,7 +854,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Yetkiler" msprop:Generator_TableClassName="YetkilerDataTable" msprop:Generator_TableVarName="tableYetkiler" msprop:Generator_TablePropName="Yetkiler" msprop:Generator_RowDeletingName="YetkilerRowDeleting" msprop:Generator_RowChangingName="YetkilerRowChanging" msprop:Generator_RowEvHandlerName="YetkilerRowChangeEventHandler" msprop:Generator_RowDeletedName="YetkilerRowDeleted" msprop:Generator_UserTableName="Yetkiler" msprop:Generator_RowChangedName="YetkilerRowChanged" msprop:Generator_RowEvArgName="YetkilerRowChangeEvent" msprop:Generator_RowClassName="YetkilerRow">
+        <xs:element name="Yetkiler" msprop:Generator_TableClassName="YetkilerDataTable" msprop:Generator_TableVarName="tableYetkiler" msprop:Generator_RowChangedName="YetkilerRowChanged" msprop:Generator_TablePropName="Yetkiler" msprop:Generator_RowDeletingName="YetkilerRowDeleting" msprop:Generator_RowChangingName="YetkilerRowChanging" msprop:Generator_RowEvHandlerName="YetkilerRowChangeEventHandler" msprop:Generator_RowDeletedName="YetkilerRowDeleted" msprop:Generator_RowClassName="YetkilerRow" msprop:Generator_UserTableName="Yetkiler" msprop:Generator_RowEvArgName="YetkilerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="YetkiTuru" msprop:Generator_ColumnVarNameInTable="columnYetkiTuru" msprop:Generator_ColumnPropNameInRow="YetkiTuru" msprop:Generator_ColumnPropNameInTable="YetkiTuruColumn" msprop:Generator_UserColumnName="YetkiTuru" minOccurs="0">
@@ -859,7 +868,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="gosterSaha" msprop:Generator_TableClassName="gosterSahaDataTable" msprop:Generator_TableVarName="tablegosterSaha" msprop:Generator_TablePropName="gosterSaha" msprop:Generator_RowDeletingName="gosterSahaRowDeleting" msprop:Generator_RowChangingName="gosterSahaRowChanging" msprop:Generator_RowEvHandlerName="gosterSahaRowChangeEventHandler" msprop:Generator_RowDeletedName="gosterSahaRowDeleted" msprop:Generator_UserTableName="gosterSaha" msprop:Generator_RowChangedName="gosterSahaRowChanged" msprop:Generator_RowEvArgName="gosterSahaRowChangeEvent" msprop:Generator_RowClassName="gosterSahaRow">
+        <xs:element name="gosterSaha" msprop:Generator_TableClassName="gosterSahaDataTable" msprop:Generator_TableVarName="tablegosterSaha" msprop:Generator_RowChangedName="gosterSahaRowChanged" msprop:Generator_TablePropName="gosterSaha" msprop:Generator_RowDeletingName="gosterSahaRowDeleting" msprop:Generator_RowChangingName="gosterSahaRowChanging" msprop:Generator_RowEvHandlerName="gosterSahaRowChangeEventHandler" msprop:Generator_RowDeletedName="gosterSahaRowDeleted" msprop:Generator_RowClassName="gosterSahaRow" msprop:Generator_UserTableName="gosterSaha" msprop:Generator_RowEvArgName="gosterSahaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Personel_x0020_Adı" msprop:Generator_ColumnVarNameInTable="columnPersonel_Adı" msprop:Generator_ColumnPropNameInRow="Personel_Adı" msprop:Generator_ColumnPropNameInTable="Personel_AdıColumn" msprop:Generator_UserColumnName="Personel Adı" minOccurs="0">
@@ -900,7 +909,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="gosterUyeler" msprop:Generator_TableClassName="gosterUyelerDataTable" msprop:Generator_TableVarName="tablegosterUyeler" msprop:Generator_TablePropName="gosterUyeler" msprop:Generator_RowDeletingName="gosterUyelerRowDeleting" msprop:Generator_RowChangingName="gosterUyelerRowChanging" msprop:Generator_RowEvHandlerName="gosterUyelerRowChangeEventHandler" msprop:Generator_RowDeletedName="gosterUyelerRowDeleted" msprop:Generator_UserTableName="gosterUyeler" msprop:Generator_RowChangedName="gosterUyelerRowChanged" msprop:Generator_RowEvArgName="gosterUyelerRowChangeEvent" msprop:Generator_RowClassName="gosterUyelerRow">
+        <xs:element name="gosterUyeler" msprop:Generator_TableClassName="gosterUyelerDataTable" msprop:Generator_TableVarName="tablegosterUyeler" msprop:Generator_RowChangedName="gosterUyelerRowChanged" msprop:Generator_TablePropName="gosterUyeler" msprop:Generator_RowDeletingName="gosterUyelerRowDeleting" msprop:Generator_RowChangingName="gosterUyelerRowChanging" msprop:Generator_RowEvHandlerName="gosterUyelerRowChangeEventHandler" msprop:Generator_RowDeletedName="gosterUyelerRowDeleted" msprop:Generator_RowClassName="gosterUyelerRow" msprop:Generator_UserTableName="gosterUyeler" msprop:Generator_RowEvArgName="gosterUyelerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -957,7 +966,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="halisahaBilgisi" msprop:Generator_TableClassName="halisahaBilgisiDataTable" msprop:Generator_TableVarName="tablehalisahaBilgisi" msprop:Generator_TablePropName="halisahaBilgisi" msprop:Generator_RowDeletingName="halisahaBilgisiRowDeleting" msprop:Generator_RowChangingName="halisahaBilgisiRowChanging" msprop:Generator_RowEvHandlerName="halisahaBilgisiRowChangeEventHandler" msprop:Generator_RowDeletedName="halisahaBilgisiRowDeleted" msprop:Generator_UserTableName="halisahaBilgisi" msprop:Generator_RowChangedName="halisahaBilgisiRowChanged" msprop:Generator_RowEvArgName="halisahaBilgisiRowChangeEvent" msprop:Generator_RowClassName="halisahaBilgisiRow">
+        <xs:element name="halisahaBilgisi" msprop:Generator_TableClassName="halisahaBilgisiDataTable" msprop:Generator_TableVarName="tablehalisahaBilgisi" msprop:Generator_RowChangedName="halisahaBilgisiRowChanged" msprop:Generator_TablePropName="halisahaBilgisi" msprop:Generator_RowDeletingName="halisahaBilgisiRowDeleting" msprop:Generator_RowChangingName="halisahaBilgisiRowChanging" msprop:Generator_RowEvHandlerName="halisahaBilgisiRowChangeEventHandler" msprop:Generator_RowDeletedName="halisahaBilgisiRowDeleted" msprop:Generator_RowClassName="halisahaBilgisiRow" msprop:Generator_UserTableName="halisahaBilgisi" msprop:Generator_RowEvArgName="halisahaBilgisiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SahaAdi" msprop:Generator_ColumnVarNameInTable="columnSahaAdi" msprop:Generator_ColumnPropNameInRow="SahaAdi" msprop:Generator_ColumnPropNameInTable="SahaAdiColumn" msprop:Generator_UserColumnName="SahaAdi" minOccurs="0">
@@ -998,7 +1007,7 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="takımBilgisi" msprop:Generator_TableClassName="takımBilgisiDataTable" msprop:Generator_TableVarName="tabletakımBilgisi" msprop:Generator_TablePropName="takımBilgisi" msprop:Generator_RowDeletingName="takımBilgisiRowDeleting" msprop:Generator_RowChangingName="takımBilgisiRowChanging" msprop:Generator_RowEvHandlerName="takımBilgisiRowChangeEventHandler" msprop:Generator_RowDeletedName="takımBilgisiRowDeleted" msprop:Generator_UserTableName="takımBilgisi" msprop:Generator_RowChangedName="takımBilgisiRowChanged" msprop:Generator_RowEvArgName="takımBilgisiRowChangeEvent" msprop:Generator_RowClassName="takımBilgisiRow">
+        <xs:element name="takımBilgisi" msprop:Generator_TableClassName="takımBilgisiDataTable" msprop:Generator_TableVarName="tabletakımBilgisi" msprop:Generator_RowChangedName="takımBilgisiRowChanged" msprop:Generator_TablePropName="takımBilgisi" msprop:Generator_RowDeletingName="takımBilgisiRowDeleting" msprop:Generator_RowChangingName="takımBilgisiRowChanging" msprop:Generator_RowEvHandlerName="takımBilgisiRowChangeEventHandler" msprop:Generator_RowDeletedName="takımBilgisiRowDeleted" msprop:Generator_RowClassName="takımBilgisiRow" msprop:Generator_UserTableName="takımBilgisi" msprop:Generator_RowEvArgName="takımBilgisiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ad" msprop:Generator_ColumnVarNameInTable="columnAd" msprop:Generator_ColumnPropNameInRow="Ad" msprop:Generator_ColumnPropNameInTable="AdColumn" msprop:Generator_UserColumnName="Ad">
@@ -1074,12 +1083,12 @@ SELECT KullaniciAdi, Sifre, OyuncuId, YetkiKodu FROM Uyeler WHERE (KullaniciAdi 
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Oyuncular_Takimlar" msdata:parent="Takimlar" msdata:child="Oyuncular" msdata:parentkey="TakimNo" msdata:childkey="TakimNo" msprop:Generator_UserChildTable="Oyuncular" msprop:Generator_ChildPropName="GetOyuncularRows" msprop:Generator_UserRelationName="FK_Oyuncular_Takimlar" msprop:Generator_RelationVarName="relationFK_Oyuncular_Takimlar" msprop:Generator_UserParentTable="Takimlar" msprop:Generator_ParentPropName="TakimlarRow" />
-      <msdata:Relationship name="FK_PersonelSahaNo_SahaSahaNo" msdata:parent="Saha" msdata:child="Personel" msdata:parentkey="SahaNo" msdata:childkey="SahaNo" msprop:Generator_UserChildTable="Personel" msprop:Generator_ChildPropName="GetPersonelRows" msprop:Generator_UserRelationName="FK_PersonelSahaNo_SahaSahaNo" msprop:Generator_RelationVarName="relationFK_PersonelSahaNo_SahaSahaNo" msprop:Generator_UserParentTable="Saha" msprop:Generator_ParentPropName="SahaRow" />
-      <msdata:Relationship name="FK_PersonelSahaTuru_SahaTuruSahaId" msdata:parent="SahaTuru" msdata:child="Saha" msdata:parentkey="SahaId" msdata:childkey="SahaTuru" msprop:Generator_UserChildTable="Saha" msprop:Generator_ChildPropName="GetSahaRows" msprop:Generator_UserRelationName="FK_PersonelSahaTuru_SahaTuruSahaId" msprop:Generator_RelationVarName="relationFK_PersonelSahaTuru_SahaTuruSahaId" msprop:Generator_UserParentTable="SahaTuru" msprop:Generator_ParentPropName="SahaTuruRow" />
-      <msdata:Relationship name="FK_Saha_SahaDurumu" msdata:parent="SahaDurumu" msdata:child="Saha" msdata:parentkey="DurumKodu" msdata:childkey="SahaDurumu" msprop:Generator_UserChildTable="Saha" msprop:Generator_ChildPropName="GetSahaRows" msprop:Generator_UserRelationName="FK_Saha_SahaDurumu" msprop:Generator_RelationVarName="relationFK_Saha_SahaDurumu" msprop:Generator_UserParentTable="SahaDurumu" msprop:Generator_ParentPropName="SahaDurumuRow" />
-      <msdata:Relationship name="FK_UyelerId_OyuncularId" msdata:parent="Oyuncular" msdata:child="Uyeler" msdata:parentkey="Id" msdata:childkey="OyuncuId" msprop:Generator_UserChildTable="Uyeler" msprop:Generator_ChildPropName="GetUyelerRows" msprop:Generator_UserRelationName="FK_UyelerId_OyuncularId" msprop:Generator_ParentPropName="OyuncularRow" msprop:Generator_RelationVarName="relationFK_UyelerId_OyuncularId" msprop:Generator_UserParentTable="Oyuncular" />
-      <msdata:Relationship name="FK_Yetkililer_Uyeler_YetkiKodu" msdata:parent="Yetkiler" msdata:child="Uyeler" msdata:parentkey="YetkiKodu" msdata:childkey="YetkiKodu" msprop:Generator_UserChildTable="Uyeler" msprop:Generator_ChildPropName="GetUyelerRows" msprop:Generator_UserRelationName="FK_Yetkililer_Uyeler_YetkiKodu" msprop:Generator_RelationVarName="relationFK_Yetkililer_Uyeler_YetkiKodu" msprop:Generator_UserParentTable="Yetkiler" msprop:Generator_ParentPropName="YetkilerRow" />
+      <msdata:Relationship name="FK_Oyuncular_Takimlar" msdata:parent="Takimlar" msdata:child="Oyuncular" msdata:parentkey="TakimNo" msdata:childkey="TakimNo" msprop:Generator_UserChildTable="Oyuncular" msprop:Generator_ChildPropName="GetOyuncularRows" msprop:Generator_UserRelationName="FK_Oyuncular_Takimlar" msprop:Generator_ParentPropName="TakimlarRow" msprop:Generator_RelationVarName="relationFK_Oyuncular_Takimlar" msprop:Generator_UserParentTable="Takimlar" />
+      <msdata:Relationship name="FK_PersonelSahaNo_SahaSahaNo" msdata:parent="Saha" msdata:child="Personel" msdata:parentkey="SahaNo" msdata:childkey="SahaNo" msprop:Generator_UserChildTable="Personel" msprop:Generator_ChildPropName="GetPersonelRows" msprop:Generator_UserRelationName="FK_PersonelSahaNo_SahaSahaNo" msprop:Generator_ParentPropName="SahaRow" msprop:Generator_RelationVarName="relationFK_PersonelSahaNo_SahaSahaNo" msprop:Generator_UserParentTable="Saha" />
+      <msdata:Relationship name="FK_PersonelSahaTuru_SahaTuruSahaId" msdata:parent="SahaTuru" msdata:child="Saha" msdata:parentkey="SahaId" msdata:childkey="SahaTuru" msprop:Generator_UserChildTable="Saha" msprop:Generator_ChildPropName="GetSahaRows" msprop:Generator_UserRelationName="FK_PersonelSahaTuru_SahaTuruSahaId" msprop:Generator_ParentPropName="SahaTuruRow" msprop:Generator_RelationVarName="relationFK_PersonelSahaTuru_SahaTuruSahaId" msprop:Generator_UserParentTable="SahaTuru" />
+      <msdata:Relationship name="FK_Saha_SahaDurumu" msdata:parent="SahaDurumu" msdata:child="Saha" msdata:parentkey="DurumKodu" msdata:childkey="SahaDurumu" msprop:Generator_UserChildTable="Saha" msprop:Generator_ChildPropName="GetSahaRows" msprop:Generator_UserRelationName="FK_Saha_SahaDurumu" msprop:Generator_ParentPropName="SahaDurumuRow" msprop:Generator_RelationVarName="relationFK_Saha_SahaDurumu" msprop:Generator_UserParentTable="SahaDurumu" />
+      <msdata:Relationship name="FK_UyelerId_OyuncularId" msdata:parent="Oyuncular" msdata:child="Uyeler" msdata:parentkey="Id" msdata:childkey="OyuncuId" msprop:Generator_UserChildTable="Uyeler" msprop:Generator_ChildPropName="GetUyelerRows" msprop:Generator_UserRelationName="FK_UyelerId_OyuncularId" msprop:Generator_RelationVarName="relationFK_UyelerId_OyuncularId" msprop:Generator_UserParentTable="Oyuncular" msprop:Generator_ParentPropName="OyuncularRow" />
+      <msdata:Relationship name="FK_Yetkililer_Uyeler_YetkiKodu" msdata:parent="Yetkiler" msdata:child="Uyeler" msdata:parentkey="YetkiKodu" msdata:childkey="YetkiKodu" msprop:Generator_UserChildTable="Uyeler" msprop:Generator_ChildPropName="GetUyelerRows" msprop:Generator_UserRelationName="FK_Yetkililer_Uyeler_YetkiKodu" msprop:Generator_ParentPropName="YetkilerRow" msprop:Generator_RelationVarName="relationFK_Yetkililer_Uyeler_YetkiKodu" msprop:Generator_UserParentTable="Yetkiler" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

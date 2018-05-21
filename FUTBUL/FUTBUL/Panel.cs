@@ -34,9 +34,9 @@ namespace FUTBUL
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'futbolDataSet1.Takimlar' table. You can move, or remove it, as needed.
-            this.takimlarTableAdapter1.Fill(this.futbolDataSet1.Takimlar);
+            this.takimlarTableAdapter.Fill(this.futbolDataSet.Takimlar);
             // TODO: This line of code loads data into the 'futbolDataSet1.SahaDurumu' table. You can move, or remove it, as needed.
-            this.sahaDurumuTableAdapter1.Fill(this.futbolDataSet1.SahaDurumu);
+            this.sahaDurumuTableAdapter.Fill(this.futbolDataSet.SahaDurumu);
         }
 
         private void temizle()
@@ -165,8 +165,31 @@ namespace FUTBUL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            SahaEkle sh = new SahaEkle();
-            sh.Show();
+           /* conn.Open();
+            
+            SqlCommand cmd = new SqlCommand("select yetkikodu from Uyeler where KullaniciAdi='"+lblKullaniciAdi.Text+"'",conn);
+
+            if (lblKullaniciAdi.Text!="none")
+            {
+                MessageBox.Show(cmd.ExecuteScalar().ToString());
+
+                if (cmd.ExecuteScalar().ToString() == "1" || cmd.ExecuteScalar().ToString() == "0")
+                {*/
+                    SahaEkle sh = new SahaEkle();
+                    sh.Show();
+            /* }
+
+         }
+
+         else
+         {
+             MessageBox.Show("'"+lblKullaniciAdi.Text+"' hesabı yetkili değil.\nLütfen Yetkili Hesapla Giriş Yapın","Hata");
+         }
+         conn.Close();*/
         }
+
+
+
     }
-}
+    }
+

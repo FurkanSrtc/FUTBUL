@@ -31,9 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.futbolDataSet = new FUTBUL.FutbolDataSet();
+            this.futbolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.takimlarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.takimlarTableAdapter = new FUTBUL.FutbolDataSetTableAdapters.TakimlarTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.sahaDurumuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sahaDurumuTableAdapter = new FUTBUL.FutbolDataSetTableAdapters.SahaDurumuTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,17 +52,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblKullaniciAdi = new System.Windows.Forms.Label();
-            this.futbolDataSet1 = new FUTBUL.FutbolDataSet();
-            this.sahaDurumuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sahaDurumuTableAdapter1 = new FUTBUL.FutbolDataSetTableAdapters.SahaDurumuTableAdapter();
-            this.takimlarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.takimlarTableAdapter1 = new FUTBUL.FutbolDataSetTableAdapters.TakimlarTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.takimlarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sahaDurumuBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sahaDurumuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.takimlarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -78,10 +80,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 233);
             this.dataGridView1.TabIndex = 1;
             // 
+            // futbolDataSet
+            // 
+            this.futbolDataSet.DataSetName = "FutbolDataSet";
+            this.futbolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // futbolDataSetBindingSource
+            // 
+            this.futbolDataSetBindingSource.DataSource = this.futbolDataSet;
+            this.futbolDataSetBindingSource.Position = 0;
+            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.takimlarBindingSource;
-            this.comboBox1.DisplayMember = "TakimAdi";
+            this.comboBox1.DisplayMember = "TakimNo";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(136, 45);
             this.comboBox1.Name = "comboBox1";
@@ -89,6 +101,15 @@
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "TakimNo";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // takimlarBindingSource
+            // 
+            this.takimlarBindingSource.DataMember = "Takimlar";
+            this.takimlarBindingSource.DataSource = this.futbolDataSetBindingSource;
+            // 
+            // takimlarTableAdapter
+            // 
+            this.takimlarTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -110,6 +131,15 @@
             this.comboBox2.TabIndex = 7;
             this.comboBox2.ValueMember = "SahaDurum";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // sahaDurumuBindingSource
+            // 
+            this.sahaDurumuBindingSource.DataMember = "SahaDurumu";
+            this.sahaDurumuBindingSource.DataSource = this.futbolDataSetBindingSource;
+            // 
+            // sahaDurumuTableAdapter
+            // 
+            this.sahaDurumuTableAdapter.ClearBeforeFill = true;
             // 
             // label2
             // 
@@ -237,29 +267,6 @@
             this.lblKullaniciAdi.TabIndex = 12;
             this.lblKullaniciAdi.Text = "none";
             // 
-            // futbolDataSet1
-            // 
-            this.futbolDataSet1.DataSetName = "FutbolDataSet";
-            this.futbolDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sahaDurumuBindingSource
-            // 
-            this.sahaDurumuBindingSource.DataMember = "SahaDurumu";
-            this.sahaDurumuBindingSource.DataSource = this.futbolDataSet1;
-            // 
-            // sahaDurumuTableAdapter1
-            // 
-            this.sahaDurumuTableAdapter1.ClearBeforeFill = true;
-            // 
-            // takimlarBindingSource
-            // 
-            this.takimlarBindingSource.DataMember = "Takimlar";
-            this.takimlarBindingSource.DataSource = this.futbolDataSet1;
-            // 
-            // takimlarTableAdapter1
-            // 
-            this.takimlarTableAdapter1.ClearBeforeFill = true;
-            // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,12 +281,13 @@
             this.Text = "Panel";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.takimlarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sahaDurumuBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sahaDurumuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.takimlarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,11 +297,14 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource futbolDataSetBindingSource;
         private FutbolDataSet futbolDataSet;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource takimlarBindingSource;
         private FutbolDataSetTableAdapters.TakimlarTableAdapter takimlarTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource sahaDurumuBindingSource;
         private FutbolDataSetTableAdapters.SahaDurumuTableAdapter sahaDurumuTableAdapter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
@@ -307,11 +318,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblKullaniciAdi;
-        private FutbolDataSet futbolDataSet1;
-        private System.Windows.Forms.BindingSource sahaDurumuBindingSource;
-        private FutbolDataSetTableAdapters.SahaDurumuTableAdapter sahaDurumuTableAdapter1;
-        private System.Windows.Forms.BindingSource takimlarBindingSource;
-        private FutbolDataSetTableAdapters.TakimlarTableAdapter takimlarTableAdapter1;
     }
 }
 
