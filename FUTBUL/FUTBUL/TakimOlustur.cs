@@ -34,7 +34,7 @@ namespace FUTBUL
                 Kullanici kullanici = new Kullanici();
                 conn.Open();
                 DataTable tbl = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(" Insert into Takimlar Values ('" + textBox1.Text + "','" + textBox2.Text + "','" + kullaniciAdi + "')", conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(" exec pTakimOlustur '" + textBox1.Text + "','" + textBox2.Text + "','" + kullaniciAdi + "'", conn);
                 adapter.Fill(tbl);
                 conn.Close();
 

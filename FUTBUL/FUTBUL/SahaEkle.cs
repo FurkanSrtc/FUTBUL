@@ -21,31 +21,29 @@ namespace FUTBUL
 
         private void SahaEkle_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'futbolDataSet.SahaTuru' table. You can move, or remove it, as needed.
             this.sahaTuruTableAdapter.Fill(this.futbolDataSet.SahaTuru);
-
-
+            #region iller
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("select * from iller ORDER BY isim ASC ", conn);
             da.Fill(dt);
             cmbil.ValueMember = "il_no";
             cmbil.DisplayMember = "isim";
             cmbil.DataSource = dt;
-
+            #endregion
+            #region ilceler
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("select * from Uyeler  where YetkiKodu='2'  ORDER BY KullaniciAdi", conn);
             da2.Fill(dt2);
             cmbUye.ValueMember = "OyuncuId";
             cmbUye.DisplayMember = "KullaniciAdi";
             cmbUye.DataSource = dt2;
-
+            #endregion
         }
 
         private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbil.SelectedIndex != -1)
             {
-               
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter("select * from ilceler where il_no = " + cmbil.SelectedValue, conn);
                 da.Fill(dt);
@@ -55,18 +53,84 @@ namespace FUTBUL
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into Saha values ('" + txtSahaAdi.Text + "','" + cmbSaha.SelectedValue + "','" + cmbil.SelectedValue.ToString() + "','" + cmbilce.SelectedValue.ToString() + "','" + txtAdres.Text + "','a','"+cmbUye.SelectedValue.ToString()+"')",conn);
+            SqlCommand cmd = new SqlCommand("exec ekleHaliSaha'" + txtSahaAdi.Text + "','" + cmbSaha.SelectedValue + "','" + cmbil.SelectedValue.ToString() + "','" + cmbilce.SelectedValue.ToString() + "','" + txtAdres.Text + "','"+cmbUye.SelectedValue.ToString()+"','"+txtUcret.Text+"'",conn);
             cmd.ExecuteNonQuery();
+            foreach (CalismaSaati item in secilenGunler)
+            {
+                SqlCommand cmd2 = new SqlCommand("exec ekleSahaCalismaSaati '"+item.Gun+"','"+item.AcilisSaati+"','"+item.KapanisSaati+"'",conn);
+                cmd2.ExecuteNonQuery();
+            }
             conn.Close();
             MessageBox.Show("Başarılı");
+        }
+
+        List<CalismaSaati> secilenGunler = new List<CalismaSaati>();
+        private void numericKontrol(CheckBox checkGun,DateTimePicker baslangicSaat, DateTimePicker bitisSaat,Label label)
+        {
+            if (checkGun.Checked==true)
+            {
+                CalismaSaati calismaSaati = new CalismaSaati() {
+                   Gun=checkGun.Text,
+                   AcilisSaati=baslangicSaat.Text,
+                   KapanisSaati= bitisSaat.Text };
+              
+                secilenGunler.Add(calismaSaati);
+
+                baslangicSaat.Visible = true;
+                bitisSaat.Visible = true;
+                label.Visible = true;
+            }
+            else
+            {
+                CalismaSaati calismaSaati = new CalismaSaati()
+                {
+                    Gun = checkGun.Text,
+                    AcilisSaati = baslangicSaat.Text,
+                    KapanisSaati = bitisSaat.Text
+                };
+                secilenGunler.RemoveAll(a => a.Gun == calismaSaati.Gun);
+                baslangicSaat.Visible = false;
+                bitisSaat.Visible = false;
+                label.Visible = false;
+            }
+        }
+
+        private void chkPazartesi_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkPazartesi, BasPazartesi, BitPazartesi, label7);
+        }
+
+        private void chkSali_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkSali, BasSalı, BitSalı, label8);
+        }
+
+        private void chkCarsamba_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkCarsamba, BasÇarşamba, BitÇarşamba, label9);
+        }
+
+        private void chkPersembe_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkPersembe, BasPerşembe, BitPerşembe, label10);
+        }
+
+        private void chkCuma_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkCuma, basCuma, BitCuma, label11);
+        }
+
+        private void chkCumartesi_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkCumartesi, basCumartesi, BitCumartesi, label12);
+        }
+
+        private void chkPazar_CheckedChanged(object sender, EventArgs e)
+        {
+            numericKontrol(chkPazar, basPazar, BitPazar, label13);
         }
     }
 }

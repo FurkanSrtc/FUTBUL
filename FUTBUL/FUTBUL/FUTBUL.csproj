@@ -51,6 +51,7 @@
     <Compile Include="BasvuruOnay.Designer.cs">
       <DependentUpon>BasvuruOnay.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalismaSaati.cs" />
     <Compile Include="FutbolDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
