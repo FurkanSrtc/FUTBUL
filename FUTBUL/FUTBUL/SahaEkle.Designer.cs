@@ -78,6 +78,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtUcret = new System.Windows.Forms.TextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sahaTuruBindingSource)).BeginInit();
@@ -86,7 +87,7 @@
             // 
             // txtSahaAdi
             // 
-            this.txtSahaAdi.Location = new System.Drawing.Point(95, 75);
+            this.txtSahaAdi.Location = new System.Drawing.Point(81, 89);
             this.txtSahaAdi.Name = "txtSahaAdi";
             this.txtSahaAdi.Size = new System.Drawing.Size(121, 20);
             this.txtSahaAdi.TabIndex = 0;
@@ -94,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 78);
+            this.label1.Location = new System.Drawing.Point(27, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 3;
@@ -103,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 189);
+            this.label2.Location = new System.Drawing.Point(53, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 13);
             this.label2.TabIndex = 4;
@@ -112,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 152);
+            this.label3.Location = new System.Drawing.Point(65, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(12, 13);
             this.label3.TabIndex = 5;
@@ -121,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 115);
+            this.label4.Location = new System.Drawing.Point(20, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 6;
@@ -130,7 +131,7 @@
             // cmbil
             // 
             this.cmbil.FormattingEnabled = true;
-            this.cmbil.Location = new System.Drawing.Point(95, 148);
+            this.cmbil.Location = new System.Drawing.Point(81, 162);
             this.cmbil.Name = "cmbil";
             this.cmbil.Size = new System.Drawing.Size(121, 21);
             this.cmbil.TabIndex = 7;
@@ -139,7 +140,7 @@
             // cmbilce
             // 
             this.cmbilce.FormattingEnabled = true;
-            this.cmbilce.Location = new System.Drawing.Point(95, 185);
+            this.cmbilce.Location = new System.Drawing.Point(81, 199);
             this.cmbilce.Name = "cmbilce";
             this.cmbilce.Size = new System.Drawing.Size(121, 21);
             this.cmbilce.TabIndex = 8;
@@ -148,7 +149,7 @@
             // 
             this.cmbUye.DisplayMember = "SahaId";
             this.cmbUye.FormattingEnabled = true;
-            this.cmbUye.Location = new System.Drawing.Point(95, 38);
+            this.cmbUye.Location = new System.Drawing.Point(81, 52);
             this.cmbUye.Name = "cmbUye";
             this.cmbUye.Size = new System.Drawing.Size(121, 21);
             this.cmbUye.TabIndex = 9;
@@ -166,7 +167,7 @@
             // 
             // txtAdres
             // 
-            this.txtAdres.Location = new System.Drawing.Point(95, 258);
+            this.txtAdres.Location = new System.Drawing.Point(81, 272);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(121, 96);
             this.txtAdres.TabIndex = 10;
@@ -175,7 +176,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 263);
+            this.label5.Location = new System.Drawing.Point(43, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 4;
@@ -186,7 +187,7 @@
             this.cmbSaha.DataSource = this.sahaTuruBindingSource;
             this.cmbSaha.DisplayMember = "SahaTuru";
             this.cmbSaha.FormattingEnabled = true;
-            this.cmbSaha.Location = new System.Drawing.Point(95, 111);
+            this.cmbSaha.Location = new System.Drawing.Point(81, 125);
             this.cmbSaha.Name = "cmbSaha";
             this.cmbSaha.Size = new System.Drawing.Size(121, 21);
             this.cmbSaha.TabIndex = 11;
@@ -204,7 +205,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 41);
+            this.label6.Location = new System.Drawing.Point(51, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 12;
@@ -212,9 +213,9 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(95, 370);
+            this.btnKaydet.Location = new System.Drawing.Point(81, 384);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(121, 38);
+            this.btnKaydet.Size = new System.Drawing.Size(639, 38);
             this.btnKaydet.TabIndex = 13;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -327,7 +328,7 @@
             this.groupBox1.Controls.Add(this.chkCuma);
             this.groupBox1.Controls.Add(this.chkCarsamba);
             this.groupBox1.Controls.Add(this.chkPersembe);
-            this.groupBox1.Location = new System.Drawing.Point(236, 32);
+            this.groupBox1.Location = new System.Drawing.Point(222, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(277, 322);
             this.groupBox1.TabIndex = 21;
@@ -589,7 +590,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(58, 226);
+            this.label14.Location = new System.Drawing.Point(44, 240);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 13);
             this.label14.TabIndex = 4;
@@ -597,16 +598,25 @@
             // 
             // txtUcret
             // 
-            this.txtUcret.Location = new System.Drawing.Point(95, 223);
+            this.txtUcret.Location = new System.Drawing.Point(81, 237);
             this.txtUcret.Name = "txtUcret";
             this.txtUcret.Size = new System.Drawing.Size(100, 20);
             this.txtUcret.TabIndex = 22;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(521, 49);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(199, 319);
+            this.checkedListBox1.TabIndex = 23;
             // 
             // SahaEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 466);
+            this.ClientSize = new System.Drawing.Size(753, 466);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.txtUcret);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnKaydet);
@@ -687,5 +697,6 @@
         private System.Windows.Forms.DateTimePicker BasSalı;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUcret;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

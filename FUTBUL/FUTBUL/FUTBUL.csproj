@@ -57,7 +57,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FutbolDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GelenMacDavetleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GelenMacDavetleri.Designer.cs">
+      <DependentUpon>GelenMacDavetleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanici.cs" />
+    <Compile Include="MacDavetiGonder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MacDavetiGonder.Designer.cs">
+      <DependentUpon>MacDavetiGonder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     </Compile>
     <EmbeddedResource Include="BasvuruOnay.resx">
       <DependentUpon>BasvuruOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GelenMacDavetleri.resx">
+      <DependentUpon>GelenMacDavetleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MacDavetiGonder.resx">
+      <DependentUpon>MacDavetiGonder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>

@@ -169,8 +169,17 @@ namespace FUTBUL
          conn.Close();*/
         }
 
+        private void btnMacDavetiGonder_Click(object sender, EventArgs e)
+        {
+            MacDavetiGonder macDaveti = new MacDavetiGonder();
+            macDaveti.Show();
+        }
 
-
+        private void button9_Click(object sender, EventArgs e)
+        {
+            GelenMacDavetleri gelenMac = new GelenMacDavetleri();
+            gelenMac.Show();
+        }
     }
     }
 

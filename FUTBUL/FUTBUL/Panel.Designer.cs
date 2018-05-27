@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMacDavetiGonder = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblKullaniciAdi = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.futbolDataSetBindingSource)).BeginInit();
@@ -162,12 +164,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.btnMacDavetiGonder);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(423, 148);
@@ -175,13 +179,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formlar";
             // 
+            // btnMacDavetiGonder
+            // 
+            this.btnMacDavetiGonder.Location = new System.Drawing.Point(100, 70);
+            this.btnMacDavetiGonder.Name = "btnMacDavetiGonder";
+            this.btnMacDavetiGonder.Size = new System.Drawing.Size(88, 48);
+            this.btnMacDavetiGonder.TabIndex = 14;
+            this.btnMacDavetiGonder.Text = "Maç Daveti Gönder";
+            this.btnMacDavetiGonder.UseVisualStyleBackColor = true;
+            this.btnMacDavetiGonder.Click += new System.EventHandler(this.btnMacDavetiGonder_Click);
+            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(288, 70);
+            this.button8.Location = new System.Drawing.Point(194, 16);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(88, 48);
             this.button8.TabIndex = 13;
-            this.button8.Text = "Başvuru Onay";
+            this.button8.Text = "Takım Başvurularını Görüntüle";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -197,7 +211,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(288, 15);
+            this.button6.Location = new System.Drawing.Point(100, 15);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(88, 49);
             this.button6.TabIndex = 11;
@@ -207,7 +221,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(194, 15);
+            this.button5.Location = new System.Drawing.Point(288, 69);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 49);
             this.button5.TabIndex = 10;
@@ -217,7 +231,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(100, 15);
+            this.button3.Location = new System.Drawing.Point(288, 16);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 49);
             this.button3.TabIndex = 9;
@@ -266,6 +280,16 @@
             this.lblKullaniciAdi.Size = new System.Drawing.Size(31, 13);
             this.lblKullaniciAdi.TabIndex = 12;
             this.lblKullaniciAdi.Text = "none";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(194, 70);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(88, 48);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "Maç Davetlerini Görüntüle";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Panel
             // 
@@ -318,6 +342,8 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblKullaniciAdi;
+        private System.Windows.Forms.Button btnMacDavetiGonder;
+        private System.Windows.Forms.Button button9;
     }
 }
 

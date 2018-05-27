@@ -52,7 +52,7 @@ namespace FUTBUL
         {
             button1.Enabled = true;
             textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString(); //Datagriddeki seçili satırın 0 indeksli sütunundaki veriyi çeker.
-            takimkodu = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            takimkodu = textBox2.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)

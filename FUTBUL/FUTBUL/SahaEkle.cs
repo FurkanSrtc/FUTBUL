@@ -38,6 +38,20 @@ namespace FUTBUL
             cmbUye.DisplayMember = "KullaniciAdi";
             cmbUye.DataSource = dt2;
             #endregion
+
+            #region Ekstra Özellikler
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select * from SahaEkstraOzellikler ORDER BY EkstraOzellikAdi", conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                checkedListBox1.Items.Add(dr["EkstraOzellikAdi"]);
+            }
+            conn.Close();
+            #endregion
+
         }
 
         private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +77,14 @@ namespace FUTBUL
                 SqlCommand cmd2 = new SqlCommand("exec ekleSahaCalismaSaati '"+item.Gun+"','"+item.AcilisSaati+"','"+item.KapanisSaati+"'",conn);
                 cmd2.ExecuteNonQuery();
             }
+        
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+             
+                    SqlCommand cmd3 = new SqlCommand("exec ekleSahaEkstra '"+item.ToString()+"','"+txtSahaAdi.Text+"'",conn);
+                    cmd3.ExecuteNonQuery();
+               
+            }
             conn.Close();
             MessageBox.Show("Başarılı");
         }
@@ -81,7 +103,7 @@ namespace FUTBUL
 
                 baslangicSaat.Visible = true;
                 bitisSaat.Visible = true;
-                label.Visible = true;
+                label.Visible = true; //Açılışla kapanış saatleri arasındaki '-' işareti
             }
             else
             {
@@ -94,7 +116,7 @@ namespace FUTBUL
                 secilenGunler.RemoveAll(a => a.Gun == calismaSaati.Gun);
                 baslangicSaat.Visible = false;
                 bitisSaat.Visible = false;
-                label.Visible = false;
+                label.Visible = false; //Açılışla kapanış saatleri arasındaki '-' işareti
             }
         }
 
@@ -127,7 +149,6 @@ namespace FUTBUL
         {
             numericKontrol(chkCumartesi, basCumartesi, BitCumartesi, label12);
         }
-
         private void chkPazar_CheckedChanged(object sender, EventArgs e)
         {
             numericKontrol(chkPazar, basPazar, BitPazar, label13);
