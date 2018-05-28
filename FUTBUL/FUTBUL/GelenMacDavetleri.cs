@@ -60,7 +60,7 @@ namespace FUTBUL
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("Başarılı");
+            MessageBox.Show("Başarılı...");
         }
     }
 }
