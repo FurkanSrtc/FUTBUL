@@ -36,20 +36,31 @@ namespace FUTBUL
             conn.Close();
 
             dataGridView1.DataSource = tbl;
+
+
+            dataGridView1.Columns[0].Visible = false;
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
-            txtAlici.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString(); //Datagriddeki seçili satırın 0 indeksli sütunundaki veriyi çeker.
+            MessageBox.Show(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            txtAlici.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString(); //Datagriddeki seçili satırın 1 indeksli sütunundaki veriyi çeker.
         }
 
         private void button1_Click(object sender, EventArgs e)
         {//Onay durumunu 1 yapcak
-            SqlCommand cmd = new SqlCommand("", conn);
+            string format = "yyyy-MM-dd HH:mm:ss";
+            DateTime tarih = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+           
+
+            SqlCommand cmd = new SqlCommand("exec guncelleMacOnayDurumu1 '"+ dataGridView1.CurrentRow.Cells[0].Value.ToString()+"','"+ 
+                tarih.ToString(format) + "', '"+comboBox1.SelectedValue.ToString()+"','"+ dataGridView1.CurrentRow.Cells[1].Value.ToString() + "' ", conn);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
+            MessageBox.Show("Başarılı");
         }
     }
 }
