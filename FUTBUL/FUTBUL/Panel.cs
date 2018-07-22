@@ -124,7 +124,7 @@ namespace FUTBUL
         {
             if (lblKullaniciAdi.Text=="none")
             {
-                MessageBox.Show("Lütfen Üye Girişi Yapın", "Hata");
+                MessageBox.Show("Lütfen Üye Girişi Yapın..", "Hata");
             }
             else { 
             TakimOlustur takim = new TakimOlustur(lblKullaniciAdi.Text);
